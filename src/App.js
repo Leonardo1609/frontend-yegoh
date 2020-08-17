@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AddForm } from './components/AddForm';
+import { UserState } from './context/User/userState';
+import { ListUsers } from './components/ListUsers';
+import { Alert } from './components/Alert';
+import { AlertState } from './context/Alert/alertState';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="p-4">
+      <div className="row justify-content-center">
+        <AlertState>
+          <UserState>
+            <div className="col-10 col-xl-4">
+                <AddForm />
+                <Alert />
+            </div>
+            <div className="col-10 col-xl-8">
+                <ListUsers />  
+            </div>
+          </UserState>
+        </AlertState>
+      </div>
     </div>
   );
 }
