@@ -53,7 +53,8 @@ export const UserReducer = (state, action) => {
                     // email
                     if( user.email.indexOf(action.payload) >= 0 ){
                         return user;
-                    }
+                    }     
+                    return null;               
                 })
             }
         default:

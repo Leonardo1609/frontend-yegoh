@@ -43,6 +43,7 @@ export const SearchUser = () => {
 
             isSearched.current = false;
         }
+        // eslint-disable-next-line
     }, [ usersfound ]);
 
     return (

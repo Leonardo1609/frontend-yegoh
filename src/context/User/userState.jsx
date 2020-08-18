@@ -19,7 +19,7 @@ export const UserState = props => {
 
     const addUser = async ( data ) => {
         try {
-            const result = await axios.post( 'http://localhost:4000/api/users', data );
+            const result = await axios.post( 'http://0.0.0.0:80/api/users', data );
             dispatch({
                 type: 'ADD_USER',
                 payload: result.data
@@ -38,11 +38,12 @@ export const UserState = props => {
 
     const getUsers = async () => {
         try {
-            const result = await axios.get( 'http://localhost:4000/api/users' );
+            const result = await axios.get( 'http://0.0.0.0:80/api/users' );
             dispatch({
                 type:'GET_USERS',
                 payload: result.data
             })
+
         } catch (error) {
             console.log( error.response );
         }
@@ -57,7 +58,7 @@ export const UserState = props => {
 
     const modifyUser = async ( data, id ) => {
         try {
-            const result = await axios.post( `http://localhost:4000/api/users/modify/${ id }`, data );
+            const result = await axios.post( `http://0.0.0.0:80/api/users/modify/${ id }`, data );
             dispatch({
                 type: 'USER_MODIFY',
                 payload: result.data
